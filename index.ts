@@ -185,3 +185,34 @@ function doubleAddHandle(num: number, cb: (num: number) => number): void {
 doubleAddHandle(21, doubleNum => {
   return doubleNum
 });
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// unknown型
+// 柔軟でanyよりも厳しい型を定義する
+let unknownInput: unknown;
+let anyInput: any;
+let text: string;
+
+// 以下全てエラーでない
+unknownInput = 'hello';
+unknownInput = 21;
+unknownInput = true;
+
+// text = unknownInput; // Error
+// anyだとエラーにならない
+// unknownは入れれるのは入れれるが、使うときに注意が必要
+
+if (typeof unknownInput === 'string') {
+  text = unknownInput
+}
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// never型
+// 起こり得ない値の型を使用する
+// 決してなにも返さない
+function error(message: string): never {
+  throw new Error(message);
+}
+// undefinedも返さない
