@@ -1,5 +1,7 @@
-let hello: string = 'hello';
-console.log(hello);
+// TypeScriptの基本構文まとめ
+
+let hello1: string = 'hello';
+console.log(hello1);
 
 
 // boolean型とnumber型とstring型を使う方法
@@ -161,9 +163,9 @@ function sayHello(): void {
 
 // undefined型とnull型についての補足
 let tmp1: undefined = undefined;
-let tmp2: undefined = null;
+// let tmp2: undefined = null; // Error
 let tmpNull1: null = null;
-let tmpNull2: null = undefined;
+// let tmpNull2: null = undefined; // Error
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
