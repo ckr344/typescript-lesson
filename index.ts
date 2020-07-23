@@ -140,3 +140,48 @@ let clothSize2: ClothSize = 'large'
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 // 関数に型を適応させる
+// パラメーターと戻り値に型が必要
+function add(num1: number, num2: number): number {
+  return num1 + num2
+};
+add(3, 2);
+// パラメーターに型をつけないとanyになる（なるべく避ける）
+// 戻り値にも型をつけるのが推奨
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// 関数の戻り値にvoid型を使う方法
+function sayHello(): void {
+  console.log('Hello!');
+}
+// なにも返さないことを型として定義する
+// 実際はundefinedが返ってくる
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// undefined型とnull型についての補足
+let tmp1: undefined = undefined;
+let tmp2: undefined = null;
+let tmpNull1: null = null;
+let tmpNull2: null = undefined;
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// 関数型を使って、特定の関数のみを代入できる変数を作る
+const anotherAdd: (n1: number, n2: number) => number = add;
+
+const doubleNumber = (num: number): number => num * 2;
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// callback関数に型をつける
+// cbは関数
+// 第1引数は数字、第2引数は(num: number) => numberの形を持った関数として扱える
+function doubleAddHandle(num: number, cb: (num: number) => number): void {
+  const doubleNum = cb(num * 2);
+  console.log(doubleNum)
+};
+
+doubleAddHandle(21, doubleNum => {
+  return doubleNum
+});
