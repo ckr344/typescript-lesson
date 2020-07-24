@@ -66,4 +66,17 @@
     "skipLibCheck": true,                     /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
   }
+  // // コンパイルしたいファイルを指定
+  // "include": [
+  //   "index.ts"
+  // ],
+  // // コンパイルしたくないファイルを指定
+  // "exclude": [
+  //   "*.spec.ts",
+  //   "**/indexxx.ts"
+  // ],
+  // // コンパイルするファイルを単体で指定
+  // "files": [
+  //   "tmp/compiler.ts"
+  // ]
 }
